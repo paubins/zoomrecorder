@@ -1,0 +1,6 @@
+framework module Pods_ZoomRecorderTests {
+  umbrella header "Pods-ZoomRecorderTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,10 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AZExpandableIconListView" "$PODS_CONFIGURATION_BUILD_DIR/BouncyLayout" "$PODS_CONFIGURATION_BUILD_DIR/Cartography" "$PODS_CONFIGURATION_BUILD_DIR/EggRating" "$PODS_CONFIGURATION_BUILD_DIR/RateView" "$PODS_CONFIGURATION_BUILD_DIR/Shift" "$PODS_CONFIGURATION_BUILD_DIR/SwiftyCam" "${PODS_ROOT}/Crashlytics/iOS" "${PODS_ROOT}/Fabric/iOS"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Crashlytics" "${PODS_ROOT}/Headers/Public/Fabric"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/AZExpandableIconListView/AZExpandableIconListView.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/BouncyLayout/BouncyLayout.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Cartography/Cartography.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/EggRating/EggRating.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/RateView/RateView.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Shift/Shift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftyCam/SwiftyCam.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Crashlytics" -isystem "${PODS_ROOT}/Headers/Public/Fabric"
+OTHER_LDFLAGS = $(inherited) -l"c++" -l"z" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods

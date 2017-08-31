@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27A80F9226C7E7AE3DC2978C /* Pods_ZoomRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A350B76F644D72335B983862 /* Pods_ZoomRecorder.framework */; };
+		5FAEF3FC1F311B5D000E3A02 /* icon_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FAEF3F91F311B5D000E3A02 /* icon_3.jpg */; };
+		5FAEF3FD1F311B5D000E3A02 /* icon_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FAEF3FA1F311B5D000E3A02 /* icon_2.jpg */; };
+		5FAEF3FE1F311B5D000E3A02 /* icon_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FAEF3FB1F311B5D000E3A02 /* icon_1.jpg */; };
+		5FAEF4011F314D64000E3A02 /* KPDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAEF4001F314D64000E3A02 /* KPDropMenu.m */; };
 		5FCCE3681F3010BB00C15D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCE3671F3010BB00C15D72 /* AppDelegate.swift */; };
 		5FCCE36A1F3010BB00C15D72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCE3691F3010BB00C15D72 /* ViewController.swift */; };
 		5FCCE36D1F3010BB00C15D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCE36B1F3010BB00C15D72 /* Main.storyboard */; };
@@ -14,6 +19,10 @@
 		5FCCE3721F3010BB00C15D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCE3701F3010BB00C15D72 /* LaunchScreen.storyboard */; };
 		5FCCE37D1F3010BB00C15D72 /* ZoomRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCE37C1F3010BB00C15D72 /* ZoomRecorderTests.swift */; };
 		5FCCE3881F3010BB00C15D72 /* ZoomRecorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCE3871F3010BB00C15D72 /* ZoomRecorderUITests.swift */; };
+		5FF475271F44A3DD00F47D8C /* BezierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF475261F44A3DD00F47D8C /* BezierViewController.m */; };
+		5FF4752A1F44A3FF00F47D8C /* UIBezierPath+LxThroughPointsBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF475291F44A3FF00F47D8C /* UIBezierPath+LxThroughPointsBezier.m */; };
+		8D320AF9858AF2DE851102E6 /* Pods_ZoomRecorderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6284393888CD597160B4D177 /* Pods_ZoomRecorderUITests.framework */; };
+		D918162EB9DA1B4E3B26C8FB /* Pods_ZoomRecorderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0DEE105499615E80AC705A /* Pods_ZoomRecorderTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0736CEF6E5C3DD15D8B5D34D /* Pods-ZoomRecorderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomRecorderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomRecorderTests/Pods-ZoomRecorderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3372E761B5CB7D0560877672 /* Pods-ZoomRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomRecorder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomRecorder/Pods-ZoomRecorder.debug.xcconfig"; sourceTree = "<group>"; };
+		5F6690EB1F4E717C00A8CEF9 /* ZoomRecorder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZoomRecorder-Bridging-Header.h"; sourceTree = "<group>"; };
+		5FAEF3F91F311B5D000E3A02 /* icon_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_3.jpg; sourceTree = "<group>"; };
+		5FAEF3FA1F311B5D000E3A02 /* icon_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_2.jpg; sourceTree = "<group>"; };
+		5FAEF3FB1F311B5D000E3A02 /* icon_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_1.jpg; sourceTree = "<group>"; };
+		5FAEF3FF1F314D64000E3A02 /* KPDropMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPDropMenu.h; sourceTree = "<group>"; };
+		5FAEF4001F314D64000E3A02 /* KPDropMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPDropMenu.m; sourceTree = "<group>"; };
 		5FCCE3641F3010BB00C15D72 /* ZoomRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZoomRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCCE3671F3010BB00C15D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FCCE3691F3010BB00C15D72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +64,17 @@
 		5FCCE3831F3010BB00C15D72 /* ZoomRecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZoomRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCCE3871F3010BB00C15D72 /* ZoomRecorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomRecorderUITests.swift; sourceTree = "<group>"; };
 		5FCCE3891F3010BB00C15D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FF475251F44A3DD00F47D8C /* BezierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierViewController.h; sourceTree = "<group>"; };
+		5FF475261F44A3DD00F47D8C /* BezierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierViewController.m; sourceTree = "<group>"; };
+		5FF475281F44A3FF00F47D8C /* UIBezierPath+LxThroughPointsBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+LxThroughPointsBezier.h"; sourceTree = "<group>"; };
+		5FF475291F44A3FF00F47D8C /* UIBezierPath+LxThroughPointsBezier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+LxThroughPointsBezier.m"; sourceTree = "<group>"; };
+		6284393888CD597160B4D177 /* Pods_ZoomRecorderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZoomRecorderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A350B76F644D72335B983862 /* Pods_ZoomRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZoomRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A507CD02F5AC611577AEDF06 /* Pods-ZoomRecorderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomRecorderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomRecorderUITests/Pods-ZoomRecorderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC5334F9E29AFA730D526E5D /* Pods-ZoomRecorderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomRecorderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomRecorderTests/Pods-ZoomRecorderTests.release.xcconfig"; sourceTree = "<group>"; };
+		C58393BE5D46A88D8EE3CE4E /* Pods-ZoomRecorderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomRecorderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomRecorderUITests/Pods-ZoomRecorderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C8A4A190321BF3AC36487064 /* Pods-ZoomRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomRecorder.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomRecorder/Pods-ZoomRecorder.release.xcconfig"; sourceTree = "<group>"; };
+		DF0DEE105499615E80AC705A /* Pods_ZoomRecorderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZoomRecorderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A80F9226C7E7AE3DC2978C /* Pods_ZoomRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D918162EB9DA1B4E3B26C8FB /* Pods_ZoomRecorderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +98,59 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D320AF9858AF2DE851102E6 /* Pods_ZoomRecorderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11F8B80174A514DE1786174A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3372E761B5CB7D0560877672 /* Pods-ZoomRecorder.debug.xcconfig */,
+				C8A4A190321BF3AC36487064 /* Pods-ZoomRecorder.release.xcconfig */,
+				0736CEF6E5C3DD15D8B5D34D /* Pods-ZoomRecorderTests.debug.xcconfig */,
+				BC5334F9E29AFA730D526E5D /* Pods-ZoomRecorderTests.release.xcconfig */,
+				A507CD02F5AC611577AEDF06 /* Pods-ZoomRecorderUITests.debug.xcconfig */,
+				C58393BE5D46A88D8EE3CE4E /* Pods-ZoomRecorderUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		271FD7AF40C86110CF7F501A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A350B76F644D72335B983862 /* Pods_ZoomRecorder.framework */,
+				DF0DEE105499615E80AC705A /* Pods_ZoomRecorderTests.framework */,
+				6284393888CD597160B4D177 /* Pods_ZoomRecorderUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FAEF4021F314D68000E3A02 /* DropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5FAEF3FF1F314D64000E3A02 /* KPDropMenu.h */,
+				5FAEF4001F314D64000E3A02 /* KPDropMenu.m */,
+			);
+			name = DropDownMenu;
+			sourceTree = "<group>";
+		};
 		5FCCE35B1F3010BB00C15D72 = {
 			isa = PBXGroup;
 			children = (
+				5FF475251F44A3DD00F47D8C /* BezierViewController.h */,
+				5FF475261F44A3DD00F47D8C /* BezierViewController.m */,
+				5FF475281F44A3FF00F47D8C /* UIBezierPath+LxThroughPointsBezier.h */,
+				5FF475291F44A3FF00F47D8C /* UIBezierPath+LxThroughPointsBezier.m */,
+				5FAEF4021F314D68000E3A02 /* DropDownMenu */,
 				5FCCE3661F3010BB00C15D72 /* ZoomRecorder */,
 				5FCCE37B1F3010BB00C15D72 /* ZoomRecorderTests */,
 				5FCCE3861F3010BB00C15D72 /* ZoomRecorderUITests */,
 				5FCCE3651F3010BB00C15D72 /* Products */,
+				11F8B80174A514DE1786174A /* Pods */,
+				271FD7AF40C86110CF7F501A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +167,16 @@
 		5FCCE3661F3010BB00C15D72 /* ZoomRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				5FAEF3F91F311B5D000E3A02 /* icon_3.jpg */,
+				5FAEF3FA1F311B5D000E3A02 /* icon_2.jpg */,
+				5FAEF3FB1F311B5D000E3A02 /* icon_1.jpg */,
 				5FCCE3671F3010BB00C15D72 /* AppDelegate.swift */,
 				5FCCE3691F3010BB00C15D72 /* ViewController.swift */,
 				5FCCE36B1F3010BB00C15D72 /* Main.storyboard */,
 				5FCCE36E1F3010BB00C15D72 /* Assets.xcassets */,
 				5FCCE3701F3010BB00C15D72 /* LaunchScreen.storyboard */,
 				5FCCE3731F3010BB00C15D72 /* Info.plist */,
+				5F6690EB1F4E717C00A8CEF9 /* ZoomRecorder-Bridging-Header.h */,
 			);
 			path = ZoomRecorder;
 			sourceTree = "<group>";
@@ -132,9 +206,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FCCE38C1F3010BB00C15D72 /* Build configuration list for PBXNativeTarget "ZoomRecorder" */;
 			buildPhases = (
+				8F36747E870DB9EC2D365199 /* [CP] Check Pods Manifest.lock */,
 				5FCCE3601F3010BB00C15D72 /* Sources */,
 				5FCCE3611F3010BB00C15D72 /* Frameworks */,
 				5FCCE3621F3010BB00C15D72 /* Resources */,
+				FCCF33CC38A9D9CF29BBEF41 /* [CP] Embed Pods Frameworks */,
+				40D379B7CF9097E97564131B /* [CP] Copy Pods Resources */,
+				5FAEF4091F314E41000E3A02 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -149,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FCCE38F1F3010BB00C15D72 /* Build configuration list for PBXNativeTarget "ZoomRecorderTests" */;
 			buildPhases = (
+				4DFE242845CD6C9D589D5995 /* [CP] Check Pods Manifest.lock */,
 				5FCCE3741F3010BB00C15D72 /* Sources */,
 				5FCCE3751F3010BB00C15D72 /* Frameworks */,
 				5FCCE3761F3010BB00C15D72 /* Resources */,
+				F33F88C28FC22A362C3B5413 /* [CP] Embed Pods Frameworks */,
+				03A01B2FB9E9C7DD8010960C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +248,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FCCE3921F3010BB00C15D72 /* Build configuration list for PBXNativeTarget "ZoomRecorderUITests" */;
 			buildPhases = (
+				FDD84E8DAE13321B134DE77C /* [CP] Check Pods Manifest.lock */,
 				5FCCE37F1F3010BB00C15D72 /* Sources */,
 				5FCCE3801F3010BB00C15D72 /* Frameworks */,
 				5FCCE3811F3010BB00C15D72 /* Resources */,
+				E758CF3922BE266D736E214F /* [CP] Embed Pods Frameworks */,
+				8F85933D8D331196A15F7DFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,9 +319,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FAEF3FE1F311B5D000E3A02 /* icon_1.jpg in Resources */,
+				5FAEF3FC1F311B5D000E3A02 /* icon_3.jpg in Resources */,
 				5FCCE3721F3010BB00C15D72 /* LaunchScreen.storyboard in Resources */,
 				5FCCE36F1F3010BB00C15D72 /* Assets.xcassets in Resources */,
 				5FCCE36D1F3010BB00C15D72 /* Main.storyboard in Resources */,
+				5FAEF3FD1F311B5D000E3A02 /* icon_2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,13 +344,167 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03A01B2FB9E9C7DD8010960C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZoomRecorderTests/Pods-ZoomRecorderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40D379B7CF9097E97564131B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZoomRecorder/Pods-ZoomRecorder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DFE242845CD6C9D589D5995 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5FAEF4091F314E41000E3A02 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 73cc3f18e2d9e92dd6e8d0333ed9139f94b28f7b 92249bff823b6e77f03ba6ca66ef011f96af74be0e8e24f9cf4bbddf467dd039";
+		};
+		8F36747E870DB9EC2D365199 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F85933D8D331196A15F7DFC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZoomRecorderUITests/Pods-ZoomRecorderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E758CF3922BE266D736E214F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZoomRecorderUITests/Pods-ZoomRecorderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F33F88C28FC22A362C3B5413 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZoomRecorderTests/Pods-ZoomRecorderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCCF33CC38A9D9CF29BBEF41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZoomRecorder/Pods-ZoomRecorder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDD84E8DAE13321B134DE77C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5FCCE3601F3010BB00C15D72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5FCCE36A1F3010BB00C15D72 /* ViewController.swift in Sources */,
+				5FF4752A1F44A3FF00F47D8C /* UIBezierPath+LxThroughPointsBezier.m in Sources */,
+				5FF475271F44A3DD00F47D8C /* BezierViewController.m in Sources */,
 				5FCCE3681F3010BB00C15D72 /* AppDelegate.swift in Sources */,
+				5FAEF4011F314D64000E3A02 /* KPDropMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +656,7 @@
 		};
 		5FCCE38D1F3010BB00C15D72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3372E761B5CB7D0560877672 /* Pods-ZoomRecorder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
@@ -422,12 +664,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paubins.ZoomRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZoomRecorder-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		5FCCE38E1F3010BB00C15D72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8A4A190321BF3AC36487064 /* Pods-ZoomRecorder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
@@ -435,12 +679,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paubins.ZoomRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZoomRecorder-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		5FCCE3901F3010BB00C15D72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0736CEF6E5C3DD15D8B5D34D /* Pods-ZoomRecorderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -456,6 +702,7 @@
 		};
 		5FCCE3911F3010BB00C15D72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC5334F9E29AFA730D526E5D /* Pods-ZoomRecorderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +718,7 @@
 		};
 		5FCCE3931F3010BB00C15D72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A507CD02F5AC611577AEDF06 /* Pods-ZoomRecorderUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
@@ -485,6 +733,7 @@
 		};
 		5FCCE3941F3010BB00C15D72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C58393BE5D46A88D8EE3CE4E /* Pods-ZoomRecorderUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
@@ -516,6 +765,7 @@
 				5FCCE38E1F3010BB00C15D72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FCCE38F1F3010BB00C15D72 /* Build configuration list for PBXNativeTarget "ZoomRecorderTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +774,7 @@
 				5FCCE3911F3010BB00C15D72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FCCE3921F3010BB00C15D72 /* Build configuration list for PBXNativeTarget "ZoomRecorderUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +783,7 @@
 				5FCCE3941F3010BB00C15D72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
