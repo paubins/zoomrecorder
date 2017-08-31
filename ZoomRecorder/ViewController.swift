@@ -36,10 +36,21 @@ class ViewController: SwiftyCamViewController {
     
     var currentIndex:Int = 0
     
+    var contentOffset:Int = 0
+    
     var playbackZoomButton:ShiftButton!
     
     var recordNewZoomButton:UIButton!
     var expandable:AZExpandableIconListView!
+    
+    lazy var bezierContainer:UIScrollView = {
+        let view:UIScrollView = UIScrollView(frame: .zero)
+        
+        view.backgroundColor = .black
+        
+        return view
+    }()
+    
     var bezierViewController:BezierViewController = BezierViewController(points: [], with: .blue)
     
     var currentPoints:[NSValue] = []
@@ -80,12 +91,18 @@ class ViewController: SwiftyCamViewController {
         return shiftView
     }()
     
+    var bezierWidthAnchor:NSLayoutConstraint!
+    var previousZoom:CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         cameraDelegate = self
         
+        self.swipeToZoom = false
+        self.pinchToZoom = true
+        self.swipeToZoomInverted = false
 
         // start animation
         shiftView.startTimedAnimation()
@@ -100,7 +117,9 @@ class ViewController: SwiftyCamViewController {
         
         self.addChildViewController(self.bezierViewController)
         
-        self.view.addSubview(self.bezierViewController.view)
+        self.bezierContainer.addSubview(self.bezierViewController.view)
+        
+        self.view.addSubview(self.bezierContainer)
         
 //        self.bezierViewController.view.addSubview(self.shiftView)
 //        
@@ -111,9 +130,19 @@ class ViewController: SwiftyCamViewController {
 //            view.bottom == view.superview!.bottom
 //        }
         
-        self.bezierViewController.view.clipsToBounds = true
+//        self.bezierViewController.view.clipsToBounds = true
+        
+//        self.bezierWidthAnchor = self.bezierViewController.view.widthAnchor.constraint(equalToConstant: 10)
+        
+        constrain(self.bezierViewController.view) { (view) in
+            view.top == view.superview!.top
+            view.right == view.superview!.right
+            view.left == view.superview!.left
+            view.bottom == view.superview!.bottom
+            view.width == 500
+        }
 
-        constrain(self.playButton, self.bezierViewController.view, self.resetButton) { (view1, view, view3) in
+        constrain(self.playButton, self.bezierContainer, self.resetButton) { (view1, view, view3) in
             view1.left == view.superview!.left
             view1.right == view.left
             view1.bottom == view.superview!.bottom
@@ -180,14 +209,18 @@ class ViewController: SwiftyCamViewController {
         self.playButton.shake()
         self.playbackTimer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { (timer) in
             if self.currentIndex < self.zooms.count {
+                self.contentOffset = self.contentOffset + 1
+                self.bezierContainer.setContentOffset(CGPoint(x: self.contentOffset, y: 0), animated: false)
                 self.changeZoom(zoom: self.zooms[self.currentIndex])
             } else {
                 timer.invalidate()
                 if (self.isVideoRecording) {
                     self.stopVideoRecording()
                 }
+                self.contentOffset = 0
+                self.bezierContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+                self.currentIndex = 0
             }
-            
             self.currentIndex += 1
         }
         
@@ -216,8 +249,14 @@ extension ViewController : SwiftyCamViewControllerDelegate {
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didChangeZoomLevel zoom: CGFloat) {
         print(zoom)
-        zooms.append(zoom)
         
+        if (self.previousZoom != zoom) {
+            zooms.append(zoom)
+        } else {
+            return
+        }
+        
+        self.previousZoom = zoom
         let currentAvg:CGFloat = self.bezierViewController.view.frame.size.width/CGFloat(self.currentPoints.count)
         
         print("CurrentAvg: \(currentAvg)")
@@ -225,8 +264,13 @@ extension ViewController : SwiftyCamViewControllerDelegate {
         self.currentPoints = self.currentPoints.map { (value) -> NSValue in
             let point:CGPoint = value.cgPointValue
             
+//            if (self.bezierWidthAnchor.constant < point.x + 1) {
+//                self.bezierWidthAnchor.constant = point.x + 1
+//            }
+            
             return NSValue(cgPoint: CGPoint(x: point.x + 1, y: point.y))
         }
+        
         
         var newZoom:CGFloat = 0.0
         if (zoom < 10) {
@@ -236,7 +280,7 @@ extension ViewController : SwiftyCamViewControllerDelegate {
         }
         
         self.currentPoints = [NSValue(cgPoint: CGPoint(x: 0, y: newZoom))] + self.currentPoints
-
+        
         self.bezierViewController.points = self.currentPoints
         self.bezierViewController.pointsChanged()
     }
