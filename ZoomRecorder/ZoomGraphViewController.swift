@@ -8,7 +8,7 @@
 
 import Foundation
 import Cartography
-
+import Shift
 
 class ZoomGraphViewController : UIViewController {
     
@@ -28,7 +28,9 @@ class ZoomGraphViewController : UIViewController {
     lazy var bezierContainer:UIScrollView = {
         let view:UIScrollView = UIScrollView(frame: .zero)
         
+        view.layer.cornerRadius = 10
         view.backgroundColor = .black
+        view.showsHorizontalScrollIndicator = false
         
         return view
     }()
@@ -40,16 +42,31 @@ class ZoomGraphViewController : UIViewController {
         
         self.addChildViewController(self.bezierViewController)
         
+        var shiftView:ShiftView = ShiftView()
+        shiftView.setColors([UIColor.orange,
+                             UIColor.red,
+                             UIColor.blue,
+                             UIColor.purple])
+        
+        // set animation duration
+        shiftView.animationDuration(3.0)
+        self.view.addSubview(shiftView)
+        
         self.bezierContainer.addSubview(self.bezierViewController.view)
         
         self.view.addSubview(self.bezierContainer)
         
-        constrain(self.bezierViewController.view) { (view) in
+        constrain(self.bezierViewController.view, shiftView) { (view, view1) in
             view.top == view.superview!.top
             view.right == view.superview!.right
             view.left == view.superview!.left
             view.bottom == view.superview!.bottom
             view.width == 500
+            
+            view1.top == view1.superview!.top
+            view1.left == view1.superview!.left
+            view1.right == view1.superview!.right
+            view1.bottom == view1.superview!.bottom
         }
         
         constrain(self.bezierContainer) { (view) in
@@ -71,7 +88,7 @@ class ZoomGraphViewController : UIViewController {
     }
     
     func moveToFirstPoint() {
-        self.contentOffset = 0
+        self.contentOffset = self.currentPoints.count
         self.bezierContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
     }
 }
@@ -85,9 +102,9 @@ extension ZoomGraphViewController : ZoomControllerDelegate {
         
         var newZoom:CGFloat = 0.0
         if (zoom < 10) {
-            newZoom = zoom * 2
+            newZoom = zoom
         } else {
-            newZoom = zoom + 10
+            newZoom = zoom
         }
         
         self.currentPoints = [NSValue(cgPoint: CGPoint(x: 0, y: newZoom))] + self.currentPoints

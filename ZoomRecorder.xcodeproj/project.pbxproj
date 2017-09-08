@@ -15,6 +15,8 @@
 		5FC1FE3F1F591DEC00823FF1 /* ZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC1FE3E1F591DEC00823FF1 /* ZoomController.swift */; };
 		5FC1FE411F59223200823FF1 /* ZoomGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC1FE401F59223200823FF1 /* ZoomGraphViewController.swift */; };
 		5FC1FE431F59280700823FF1 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC1FE421F59280700823FF1 /* UIView+.swift */; };
+		5FC1FE471F60796C00823FF1 /* DDCHardware-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5FC1FE461F6078A200823FF1 /* DDCHardware-Regular.otf */; };
+		5FC1FE481F60798500823FF1 /* DDCHardware-Condensed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5FC1FE451F6078A200823FF1 /* DDCHardware-Condensed.otf */; };
 		5FCCE3681F3010BB00C15D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCE3671F3010BB00C15D72 /* AppDelegate.swift */; };
 		5FCCE36A1F3010BB00C15D72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCE3691F3010BB00C15D72 /* ViewController.swift */; };
 		5FCCE36D1F3010BB00C15D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCE36B1F3010BB00C15D72 /* Main.storyboard */; };
@@ -57,6 +59,9 @@
 		5FC1FE3E1F591DEC00823FF1 /* ZoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomController.swift; sourceTree = "<group>"; };
 		5FC1FE401F59223200823FF1 /* ZoomGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomGraphViewController.swift; sourceTree = "<group>"; };
 		5FC1FE421F59280700823FF1 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		5FC1FE441F6078A200823FF1 /* DDCHardware-Compressed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDCHardware-Compressed.otf"; sourceTree = "<group>"; };
+		5FC1FE451F6078A200823FF1 /* DDCHardware-Condensed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDCHardware-Condensed.otf"; sourceTree = "<group>"; };
+		5FC1FE461F6078A200823FF1 /* DDCHardware-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDCHardware-Regular.otf"; sourceTree = "<group>"; };
 		5FCCE3641F3010BB00C15D72 /* ZoomRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZoomRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCCE3671F3010BB00C15D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FCCE3691F3010BB00C15D72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +179,9 @@
 		5FCCE3661F3010BB00C15D72 /* ZoomRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				5FC1FE441F6078A200823FF1 /* DDCHardware-Compressed.otf */,
+				5FC1FE451F6078A200823FF1 /* DDCHardware-Condensed.otf */,
+				5FC1FE461F6078A200823FF1 /* DDCHardware-Regular.otf */,
 				5FAEF3F91F311B5D000E3A02 /* icon_3.jpg */,
 				5FAEF3FA1F311B5D000E3A02 /* icon_2.jpg */,
 				5FAEF3FB1F311B5D000E3A02 /* icon_1.jpg */,
@@ -332,6 +340,8 @@
 				5FAEF3FC1F311B5D000E3A02 /* icon_3.jpg in Resources */,
 				5FCCE3721F3010BB00C15D72 /* LaunchScreen.storyboard in Resources */,
 				5FCCE36F1F3010BB00C15D72 /* Assets.xcassets in Resources */,
+				5FC1FE481F60798500823FF1 /* DDCHardware-Condensed.otf in Resources */,
+				5FC1FE471F60796C00823FF1 /* DDCHardware-Regular.otf in Resources */,
 				5FCCE36D1F3010BB00C15D72 /* Main.storyboard in Resources */,
 				5FAEF3FD1F311B5D000E3A02 /* icon_2.jpg in Resources */,
 			);
@@ -673,6 +683,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
 				INFOPLIST_FILE = ZoomRecorder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paubins.ZoomRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -688,6 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
 				INFOPLIST_FILE = ZoomRecorder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paubins.ZoomRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";

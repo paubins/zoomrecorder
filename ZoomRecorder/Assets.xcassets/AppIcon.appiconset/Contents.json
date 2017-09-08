@@ -103,6 +103,12 @@
       "scale" : "2x"
     },
     {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "zoomstericon.png",
+      "scale" : "1x"
+    },
+    {
       "size" : "24x24",
       "idiom" : "watch",
       "scale" : "2x",
@@ -150,7 +156,7 @@
       "subtype" : "42mm"
     },
     {
-      "idiom" : "ios-marketing",
+      "idiom" : "watch-marketing",
       "size" : "1024x1024",
       "scale" : "1x"
     }

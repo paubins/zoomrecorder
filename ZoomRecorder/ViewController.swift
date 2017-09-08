@@ -13,7 +13,8 @@ import Cartography
 import AVKit
 import Shift
 import AZExpandableIconListView
-
+import SwiftyButton
+import VerticalSlider
 
 class ViewController: SwiftyCamViewController {
 
@@ -27,27 +28,50 @@ class ViewController: SwiftyCamViewController {
     lazy var zoomController:ZoomController = {
         let zoomController:ZoomController = ZoomController()
         zoomController.delegate = self.zoomGraphViewController
+        
         return zoomController
     }()
     
-    lazy var playButton:UIButton = {
-        let button:UIButton = UIButton(frame: .zero)
-        button.backgroundColor = .blue
-        
+    lazy var playButton:PressableButton = {
+        let button:PressableButton = PressableButton(frame: .zero)
+        button.backgroundColor = .clear
+
+        button.colors = .init(button: .cyan, shadow: .blue)
+        button.shadowHeight = 5
+        button.cornerRadius = 5
+
+        button.setTitle("Play", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.init(name: "DDCHardware-Condensed", size: 12)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(12)
+
         return button
     }()
     
-    lazy var recordButton:UIButton = {
-        let button:UIButton = UIButton(frame: .zero)
+    lazy var recordButton:PressableButton = {
+        let button:PressableButton = PressableButton(frame: .zero)
         button.backgroundColor = .red
         
+        button.colors = .init(button: .cyan, shadow: .blue)
+        button.shadowHeight = 5
+        button.cornerRadius = 5
+        
+        button.setTitle("Record", for: .normal)
+        
         return button
     }()
     
-    lazy var resetButton:UIButton = {
-        let button:UIButton = UIButton(frame: .zero)
-        button.backgroundColor = .black
+    lazy var resetButton:PressableButton = {
+        let button:PressableButton = PressableButton(frame: .zero)
+        button.backgroundColor = .clear
+        button.colors = .init(button: .cyan, shadow: .blue)
+        button.shadowHeight = 5
+        button.cornerRadius = 5
         
+        button.setTitle("Reset", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.init(name: "DDCHardware-Condensed", size: 12)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(12)
         
         return button
     }()
@@ -68,6 +92,17 @@ class ViewController: SwiftyCamViewController {
     
     lazy var zoomGraphViewController:ZoomGraphViewController = ZoomGraphViewController()
     
+    lazy var verticalSlider: VerticalSlider = {
+        var verticalSlider:VerticalSlider = VerticalSlider()
+        
+        verticalSlider.slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
+        verticalSlider.slider.minimumValue = 1.0
+        verticalSlider.slider.maximumValue = 96
+        verticalSlider.slider.value = 1.0
+        
+        return verticalSlider
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -85,29 +120,37 @@ class ViewController: SwiftyCamViewController {
         self.view.addSubview(self.playButton)
         self.view.addSubview(self.recordButton)
         self.view.addSubview(self.resetButton)
+        self.view.addSubview(self.verticalSlider)
         
         self.addChildViewController(self.zoomGraphViewController)
         
         self.view.addSubview(self.zoomGraphViewController.view)
         
         self.playButton.addTarget(self, action: #selector(playbackZoom), for: .touchUpInside)
-        self.resetButton.addTarget(self, action: #selector(recordNewZoom), for: .touchUpInside)
+        self.resetButton.addTarget(self, action: #selector(recordNewZoom),  for: .touchUpInside)
 
         constrain(self.playButton, self.zoomGraphViewController.view, self.resetButton) { (view1, view, view3) in
-            view1.left == view.superview!.left
-            view1.right == view.left
-            view1.bottom == view.superview!.bottom
+            view1.left == view.superview!.left + 5
+            view1.right == view.left - 10
+            view1.bottom == view.superview!.bottom - 15
             view1.height == 110
             view1.width == 50
             
-            view.bottom == view.superview!.bottom
+            view.bottom == view.superview!.bottom - 15
             view.height == 110
             
-            view3.right == view3.superview!.right
-            view3.left == view.right
-            view3.bottom == view3.superview!.bottom
+            view3.right == view3.superview!.right - 5
+            view3.left == view.right + 10
+            view3.bottom == view3.superview!.bottom - 15
             view3.width == 50
             view3.height == 110
+        }
+        
+        constrain(self.verticalSlider) { (view) in
+            view.centerY == view.superview!.centerY
+            view.right == view.superview!.right - 15
+            view.height == 300
+            view.width == 30
         }
     }
 
@@ -117,8 +160,7 @@ class ViewController: SwiftyCamViewController {
     }
     
     func changeZoom(zoom: CGFloat) {
-        print(zoom)
-        
+
         do {
             let captureDevice = AVCaptureDevice.devices().first as? AVCaptureDevice
             try captureDevice?.lockForConfiguration()
@@ -131,6 +173,15 @@ class ViewController: SwiftyCamViewController {
         }
     }
     
+    func sliderChanged() {
+        let zoom = CGFloat(self.verticalSlider.slider.value)
+        self.changeZoom(zoom: zoom)
+        
+        if (self.playbackTimer == nil && self.zoomController.canAddZoom(zoom: zoom)) {
+            self.zoomController.addZoom(zoom: zoom)
+        }
+    }
+    
     func recordNewZoom() {
         self.resetButton.shake()
         
@@ -138,6 +189,8 @@ class ViewController: SwiftyCamViewController {
             self.playbackTimer.invalidate()
             self.playbackTimer = nil
         }
+        
+        self.verticalSlider.slider.value = 1.0
         
         self.zoomController.emptyZooms()
         
@@ -148,12 +201,13 @@ class ViewController: SwiftyCamViewController {
         self.playButton.shake()
         self.playbackTimer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { (timer) in
             if let zoom = self.zoomController.getNextZoom() {
-                self.zoomGraphViewController.moveToNextPoint()
                 self.changeZoom(zoom: zoom)
+                self.verticalSlider.slider.value = Float(zoom)
+                self.zoomGraphViewController.moveToNextPoint()
             } else {
                 timer.invalidate()
                 if (self.isVideoRecording) {
-                    self.stopVideoRecording()
+//                    self.stopVideoRecording()
                 }
                 
                 self.zoomController.resetZoomTraversal()
@@ -166,7 +220,7 @@ class ViewController: SwiftyCamViewController {
     
     func recordZoom() {
         self.recordButton.shake()
-        self.startVideoRecording()
+//        self.startVideoRecording()
         self.playbackZoom()
     }
 }
@@ -189,6 +243,7 @@ extension ViewController : SwiftyCamViewControllerDelegate {
         
         if (self.zoomController.canAddZoom(zoom: zoom)) {
             self.zoomController.addZoom(zoom: zoom)
+            self.verticalSlider.slider.value = Float(zoom)
         }
     }
 }

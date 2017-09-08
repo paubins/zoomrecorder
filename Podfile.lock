@@ -4,34 +4,34 @@ PODS:
   - Cartography (1.1.0)
   - Crashlytics (3.8.5):
     - Fabric (~> 1.6.3)
-  - EggRating (0.1.2):
-    - RateView
   - Fabric (1.6.12)
-  - RateView (1.2)
   - Shift (0.2.0)
+  - SwiftyButton (0.6.0)
   - SwiftyCam (2.4.0)
+  - VerticalSlider (1.0.1)
 
 DEPENDENCIES:
   - AZExpandableIconListView
   - BouncyLayout
   - Cartography
   - Crashlytics
-  - EggRating
   - Fabric
   - Shift
+  - SwiftyButton
   - SwiftyCam
+  - VerticalSlider
 
 SPEC CHECKSUMS:
   AZExpandableIconListView: aa29d50caf4e2713679616f2f07bdb122850364f
   BouncyLayout: f91c6504437a61acd733404f55f75bd8154f5840
   Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
   Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
-  EggRating: 633703d4be5c9938bfee58208966d75995f2cc21
   Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
-  RateView: d4d12e9bb76dc23a77a56f4e5c5fb530a3f3f998
   Shift: 489e20a2a95c4ca3ee80fab152cd80a5369c5110
+  SwiftyButton: 4c9b61c499f172971a1b8c2eebbbdc20a26d8a08
   SwiftyCam: cb83b9a8e181f70fb741d30cea724c6b045a4549
+  VerticalSlider: 33906a3bff2d22669d902d9e27b957c5f516ab5c
 
-PODFILE CHECKSUM: fff5491731199caa5412d2d48d5461dc44f11f01
+PODFILE CHECKSUM: d4fe5093d48e08607155f731b304e8b978fed9ae
 
 COCOAPODS: 1.2.1

@@ -12,8 +12,8 @@ target 'ZoomRecorder' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod "BouncyLayout"
-
-  pod 'EggRating'
+  pod 'SwiftyButton'
+  pod 'VerticalSlider'
 
   # Pods for ZoomRecorder
 
