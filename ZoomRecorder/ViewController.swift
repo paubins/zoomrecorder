@@ -11,8 +11,6 @@ import SwiftyCam
 import AVFoundation
 import Cartography
 import AVKit
-import Shift
-import AZExpandableIconListView
 import SwiftyButton
 import VerticalSlider
 
@@ -20,10 +18,7 @@ class ViewController: SwiftyCamViewController {
 
     var playbackTimer:Timer!
     
-    var playbackZoomButton:ShiftButton!
-    
     var recordNewZoomButton:UIButton!
-    var expandable:AZExpandableIconListView!
     
     lazy var zoomController:ZoomController = {
         let zoomController:ZoomController = ZoomController()
@@ -75,21 +70,7 @@ class ViewController: SwiftyCamViewController {
         
         return button
     }()
-    
-    lazy var shiftView:ShiftView = {
-        var shiftView = ShiftView()
-        
-        shiftView.setColors([UIColor.orange,
-                             UIColor.red,
-                             UIColor.blue,
-                             UIColor.purple])
-        
-        // set animation duration
-        shiftView.animationDuration(3.0)
-        
-        return shiftView
-    }()
-    
+
     lazy var zoomGraphViewController:ZoomGraphViewController = ZoomGraphViewController()
     
     lazy var verticalSlider: VerticalSlider = {
@@ -113,16 +94,12 @@ class ViewController: SwiftyCamViewController {
         self.pinchToZoom = true
         self.swipeToZoomInverted = false
 
-        // start animation
-        shiftView.startTimedAnimation()
-        
-        self.view.addSubview(self.shiftView)
         self.view.addSubview(self.playButton)
         self.view.addSubview(self.recordButton)
         self.view.addSubview(self.resetButton)
         self.view.addSubview(self.verticalSlider)
         
-        self.addChildViewController(self.zoomGraphViewController)
+        self.addChild(self.zoomGraphViewController)
         
         self.view.addSubview(self.zoomGraphViewController.view)
         
@@ -162,7 +139,7 @@ class ViewController: SwiftyCamViewController {
     func changeZoom(zoom: CGFloat) {
 
         do {
-            let captureDevice = AVCaptureDevice.devices().first as? AVCaptureDevice
+            let captureDevice = AVCaptureDevice.devices().first
             try captureDevice?.lockForConfiguration()
             
             captureDevice?.videoZoomFactor = zoom
@@ -173,7 +150,7 @@ class ViewController: SwiftyCamViewController {
         }
     }
     
-    func sliderChanged() {
+    @objc func sliderChanged() {
         let zoom = CGFloat(self.verticalSlider.slider.value)
         self.changeZoom(zoom: zoom)
         
@@ -182,7 +159,7 @@ class ViewController: SwiftyCamViewController {
         }
     }
     
-    func recordNewZoom() {
+    @objc func recordNewZoom() {
         self.resetButton.shake()
         
         if (self.playbackTimer != nil) {
@@ -197,7 +174,7 @@ class ViewController: SwiftyCamViewController {
         self.changeZoom(zoom: 1)
     }
     
-    func playbackZoom() {
+    @objc func playbackZoom() {
         self.playButton.shake()
         self.playbackTimer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { (timer) in
             if let zoom = self.zoomController.getNextZoom() {

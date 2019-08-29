@@ -7,8 +7,6 @@ target 'ZoomRecorder' do
 
   pod 'Cartography'
   pod 'SwiftyCam'
-  pod "Shift"
-  pod 'AZExpandableIconListView'
   pod 'Fabric'
   pod 'Crashlytics'
   pod "BouncyLayout"

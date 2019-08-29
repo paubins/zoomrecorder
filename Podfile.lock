@@ -1,37 +1,41 @@
 PODS:
-  - AZExpandableIconListView (0.2.1)
-  - BouncyLayout (1.1.0)
-  - Cartography (1.1.0)
-  - Crashlytics (3.8.5):
-    - Fabric (~> 1.6.3)
-  - Fabric (1.6.12)
-  - Shift (0.2.0)
-  - SwiftyButton (0.6.0)
-  - SwiftyCam (2.4.0)
-  - VerticalSlider (1.0.1)
+  - BouncyLayout (2.2.0)
+  - Cartography (4.0.0)
+  - Crashlytics (3.13.4):
+    - Fabric (~> 1.10.2)
+  - Fabric (1.10.2)
+  - SwiftyButton (0.8.2)
+  - SwiftyCam (4.0.0)
+  - VerticalSlider (2.0.0)
 
 DEPENDENCIES:
-  - AZExpandableIconListView
   - BouncyLayout
   - Cartography
   - Crashlytics
   - Fabric
-  - Shift
   - SwiftyButton
   - SwiftyCam
   - VerticalSlider
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BouncyLayout
+    - Cartography
+    - Crashlytics
+    - Fabric
+    - SwiftyButton
+    - SwiftyCam
+    - VerticalSlider
+
 SPEC CHECKSUMS:
-  AZExpandableIconListView: aa29d50caf4e2713679616f2f07bdb122850364f
-  BouncyLayout: f91c6504437a61acd733404f55f75bd8154f5840
-  Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
-  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
-  Shift: 489e20a2a95c4ca3ee80fab152cd80a5369c5110
-  SwiftyButton: 4c9b61c499f172971a1b8c2eebbbdc20a26d8a08
-  SwiftyCam: cb83b9a8e181f70fb741d30cea724c6b045a4549
-  VerticalSlider: 33906a3bff2d22669d902d9e27b957c5f516ab5c
+  BouncyLayout: b8be605d6c729086d0fc83f180f71e804abeaf04
+  Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
+  Crashlytics: 2dfd686bcb918dc10ee0e76f7f853fe42c7bd552
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  SwiftyButton: 5b0ef314e9cf61cf8a83e456ddd1ea1f53f30598
+  SwiftyCam: 6e57914771d972fbe508e759dc9d0150a44a93fd
+  VerticalSlider: 655f2bc3ed062bac13e21c174f5ff93b8308571d
 
-PODFILE CHECKSUM: d4fe5093d48e08607155f731b304e8b978fed9ae
+PODFILE CHECKSUM: 2141906c7b0b33d2a4a75ba8de726222bb52db4a
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.3

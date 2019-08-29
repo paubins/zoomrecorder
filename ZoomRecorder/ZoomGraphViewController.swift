@@ -8,7 +8,6 @@
 
 import Foundation
 import Cartography
-import Shift
 
 class ZoomGraphViewController : UIViewController {
     
@@ -40,33 +39,18 @@ class ZoomGraphViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addChildViewController(self.bezierViewController)
-        
-        var shiftView:ShiftView = ShiftView()
-        shiftView.setColors([UIColor.orange,
-                             UIColor.red,
-                             UIColor.blue,
-                             UIColor.purple])
-        
-        // set animation duration
-        shiftView.animationDuration(3.0)
-        self.view.addSubview(shiftView)
+        self.addChild(self.bezierViewController)
         
         self.bezierContainer.addSubview(self.bezierViewController.view)
         
         self.view.addSubview(self.bezierContainer)
         
-        constrain(self.bezierViewController.view, shiftView) { (view, view1) in
+        constrain(self.bezierViewController.view) { (view) in
             view.top == view.superview!.top
             view.right == view.superview!.right
             view.left == view.superview!.left
             view.bottom == view.superview!.bottom
             view.width == 500
-            
-            view1.top == view1.superview!.top
-            view1.left == view1.superview!.left
-            view1.right == view1.superview!.right
-            view1.bottom == view1.superview!.bottom
         }
         
         constrain(self.bezierContainer) { (view) in
