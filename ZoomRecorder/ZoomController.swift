@@ -29,6 +29,10 @@ class ZoomController : NSObject {
         }
     }
     
+    func validZooms() -> Bool {
+        return 0 < self.zooms.count 
+    }
+    
     func canAddZoom(zoom: CGFloat) -> Bool {
         return self.previousZoom != zoom
     }
@@ -46,13 +50,31 @@ class ZoomController : NSObject {
     }
     
     func getNextZoom() -> CGFloat! {
-        if (self.currentIndex < self.zooms.count) {
-            let zoom:CGFloat = self.zooms[self.currentIndex]
-            self.currentIndex += 1
-            return zoom
+        if (self.currentIndex == self.zooms.count) {
+            return nil
         }
         
-        return nil
+        if (self.currentIndex < 0) {
+            self.currentIndex = 0
+        }
+        
+        let zoom:CGFloat = self.zooms[self.currentIndex]
+        self.currentIndex = self.currentIndex+1
+        return zoom
+    }
+    
+    func getPrevZoom() -> CGFloat! {
+        if (self.currentIndex == -1) {
+            return nil
+        }
+        
+        if (self.currentIndex == self.zooms.count) {
+            self.currentIndex = self.zooms.count-1
+        }
+        
+        let zoom:CGFloat = self.zooms[self.currentIndex]
+        self.currentIndex = self.currentIndex-1
+        return zoom
     }
     
     func resetZoomTraversal() {

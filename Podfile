@@ -12,6 +12,7 @@ target 'ZoomRecorder' do
   pod "BouncyLayout"
   pod 'SwiftyButton'
   pod 'VerticalSlider'
+  pod 'Hue'
 
   # Pods for ZoomRecorder
 

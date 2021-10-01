@@ -13,6 +13,8 @@ class ZoomGraphViewController : UIViewController {
     
     private var contentOffset:Int = 0
     
+    var maxZoom:CGFloat = 0.0
+    
     fileprivate var currentPoints:[NSValue] = [] {
         didSet {
             if (0 < self.currentPoints.count) {
@@ -27,14 +29,14 @@ class ZoomGraphViewController : UIViewController {
     lazy var bezierContainer:UIScrollView = {
         let view:UIScrollView = UIScrollView(frame: .zero)
         
-        view.layer.cornerRadius = 10
-        view.backgroundColor = .black
+//        view.layer.cornerRadius = 10
+        view.backgroundColor = .clear
         view.showsHorizontalScrollIndicator = false
         
         return view
     }()
     
-    var bezierViewController:BezierViewController = BezierViewController(points: [], with: .blue)
+    var bezierViewController:BezierViewController = BezierViewController(points: [], with: UIColor(hex: "#ff7ad1"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,18 +63,43 @@ class ZoomGraphViewController : UIViewController {
         }
     }
     
-    func moveToNextPoint() -> Bool {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let leftBorder = CALayer()
+        leftBorder.backgroundColor = UIColor.white.cgColor
+        leftBorder.frame = CGRect(x: 0, y: 0, width: 1.0, height: self.view.frame.size.height)
+        
+        let rightBorder = CALayer()
+        rightBorder.backgroundColor = UIColor.white.cgColor
+        rightBorder.frame = CGRect(x: self.bezierContainer.frame.size.width-1.0, y: 0, width: 1.0, height: self.bezierContainer.frame.size.height)
+        
+        self.view.layer.addSublayer(leftBorder)
+        self.view.layer.addSublayer(rightBorder)
+    }
+    
+    func moveToNextPoint() {
         if (0 < self.contentOffset) {
             self.contentOffset = self.contentOffset - 1
             self.bezierContainer.setContentOffset(CGPoint(x: self.contentOffset, y: 0), animated: false)
-            return true
-        } else {
-            return false
         }
+        print(self.contentOffset)
+    }
+    
+    func moveToPrevPoint() {
+        if (0 <= self.contentOffset) {
+            self.contentOffset = min(self.currentPoints.count, self.contentOffset + 1)
+            self.bezierContainer.setContentOffset(CGPoint(x: self.contentOffset, y: 0), animated: false)
+        }
+        print(self.contentOffset)
     }
     
     func moveToFirstPoint() {
         self.contentOffset = self.currentPoints.count
+        self.bezierContainer.setContentOffset(CGPoint(x: self.contentOffset, y: 0), animated: false)
+    }
+    
+    func moveToLastPoint() {
         self.bezierContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
     }
 }
@@ -83,14 +110,10 @@ extension ZoomGraphViewController : ZoomControllerDelegate {
             let point:CGPoint = value.cgPointValue
             return NSValue(cgPoint: CGPoint(x: point.x + 1, y: point.y))
         }
+
+        let newZoom:CGFloat =  zoom/self.maxZoom * self.view.frame.size.height
         
-        var newZoom:CGFloat = 0.0
-        if (zoom < 10) {
-            newZoom = zoom
-        } else {
-            newZoom = zoom
-        }
-        
+        print(newZoom)
         self.currentPoints = [NSValue(cgPoint: CGPoint(x: 0, y: newZoom))] + self.currentPoints
         
         self.bezierViewController.points = self.currentPoints

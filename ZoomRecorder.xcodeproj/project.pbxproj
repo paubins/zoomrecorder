@@ -27,6 +27,7 @@
 		5FF475271F44A3DD00F47D8C /* BezierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF475261F44A3DD00F47D8C /* BezierViewController.m */; };
 		5FF4752A1F44A3FF00F47D8C /* UIBezierPath+LxThroughPointsBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF475291F44A3FF00F47D8C /* UIBezierPath+LxThroughPointsBezier.m */; };
 		8D320AF9858AF2DE851102E6 /* Pods_ZoomRecorderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6284393888CD597160B4D177 /* Pods_ZoomRecorderUITests.framework */; };
+		C13F0855261CF79F00131FDD /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13F0854261CF79F00131FDD /* Photos.framework */; };
 		D918162EB9DA1B4E3B26C8FB /* Pods_ZoomRecorderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0DEE105499615E80AC705A /* Pods_ZoomRecorderTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		A350B76F644D72335B983862 /* Pods_ZoomRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZoomRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A507CD02F5AC611577AEDF06 /* Pods-ZoomRecorderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomRecorderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomRecorderUITests/Pods-ZoomRecorderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5334F9E29AFA730D526E5D /* Pods-ZoomRecorderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomRecorderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomRecorderTests/Pods-ZoomRecorderTests.release.xcconfig"; sourceTree = "<group>"; };
+		C13F0854261CF79F00131FDD /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		C58393BE5D46A88D8EE3CE4E /* Pods-ZoomRecorderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomRecorderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomRecorderUITests/Pods-ZoomRecorderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C8A4A190321BF3AC36487064 /* Pods-ZoomRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomRecorder.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomRecorder/Pods-ZoomRecorder.release.xcconfig"; sourceTree = "<group>"; };
 		DF0DEE105499615E80AC705A /* Pods_ZoomRecorderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZoomRecorderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27A80F9226C7E7AE3DC2978C /* Pods_ZoomRecorder.framework in Frameworks */,
+				C13F0855261CF79F00131FDD /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +135,7 @@
 		271FD7AF40C86110CF7F501A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C13F0854261CF79F00131FDD /* Photos.framework */,
 				A350B76F644D72335B983862 /* Pods_ZoomRecorder.framework */,
 				DF0DEE105499615E80AC705A /* Pods_ZoomRecorderTests.framework */,
 				6284393888CD597160B4D177 /* Pods_ZoomRecorderUITests.framework */,
@@ -289,7 +293,7 @@
 				TargetAttributes = {
 					5FCCE3631F3010BB00C15D72 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3XSPEUHQ6Y;
+						DevelopmentTeam = 42N9D6EK46;
 						ProvisioningStyle = Automatic;
 					};
 					5FCCE3771F3010BB00C15D72 = {
@@ -415,9 +419,10 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ZoomRecorder/Pods-ZoomRecorder-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ZoomRecorder/Pods-ZoomRecorder-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BouncyLayout/BouncyLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyCam/SwiftyCam.framework",
 				"${BUILT_PRODUCTS_DIR}/VerticalSlider/VerticalSlider.framework",
@@ -426,13 +431,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BouncyLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyCam.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VerticalSlider.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZoomRecorder/Pods-ZoomRecorder-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZoomRecorder/Pods-ZoomRecorder-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FDD84E8DAE13321B134DE77C /* [CP] Check Pods Manifest.lock */ = {
@@ -640,10 +646,12 @@
 			baseConfigurationReference = 3372E761B5CB7D0560877672 /* Pods-ZoomRecorder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
+				CURRENT_PROJECT_VERSION = 18;
+				DEVELOPMENT_TEAM = 42N9D6EK46;
 				INFOPLIST_FILE = ZoomRecorder/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.paubins.ZoomRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZoomRecorder-Bridging-Header.h";
@@ -656,10 +664,12 @@
 			baseConfigurationReference = C8A4A190321BF3AC36487064 /* Pods-ZoomRecorder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
+				CURRENT_PROJECT_VERSION = 18;
+				DEVELOPMENT_TEAM = 42N9D6EK46;
 				INFOPLIST_FILE = ZoomRecorder/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.paubins.ZoomRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZoomRecorder-Bridging-Header.h";

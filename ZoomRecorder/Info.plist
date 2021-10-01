@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.2</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>10</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -42,6 +42,8 @@
 	<string>To Take Photos and Video</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>To Record Audio With Video</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photo library to store the recorded zoom.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>DDCHardware-Condensed</string>
@@ -57,8 +59,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

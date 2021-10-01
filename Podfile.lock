@@ -4,6 +4,7 @@ PODS:
   - Crashlytics (3.13.4):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
+  - Hue (5.0.0)
   - SwiftyButton (0.8.2)
   - SwiftyCam (4.0.0)
   - VerticalSlider (2.0.0)
@@ -13,16 +14,18 @@ DEPENDENCIES:
   - Cartography
   - Crashlytics
   - Fabric
+  - Hue
   - SwiftyButton
   - SwiftyCam
   - VerticalSlider
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - BouncyLayout
     - Cartography
     - Crashlytics
     - Fabric
+    - Hue
     - SwiftyButton
     - SwiftyCam
     - VerticalSlider
@@ -30,12 +33,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BouncyLayout: b8be605d6c729086d0fc83f180f71e804abeaf04
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
-  Crashlytics: 2dfd686bcb918dc10ee0e76f7f853fe42c7bd552
-  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  Crashlytics: d3e5090419ddee1003192c98ac0e6dfdb1dba266
+  Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
+  Hue: c129cb67be7d093a82bbbc30ce8a96757bf6f37a
   SwiftyButton: 5b0ef314e9cf61cf8a83e456ddd1ea1f53f30598
   SwiftyCam: 6e57914771d972fbe508e759dc9d0150a44a93fd
   VerticalSlider: 655f2bc3ed062bac13e21c174f5ff93b8308571d
 
-PODFILE CHECKSUM: 2141906c7b0b33d2a4a75ba8de726222bb52db4a
+PODFILE CHECKSUM: 15294d1a88efa49d454bacd0a120faac8e21a0e0
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.3
